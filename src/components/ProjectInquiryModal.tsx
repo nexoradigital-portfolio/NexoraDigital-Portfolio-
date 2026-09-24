@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Send, CheckCircle2, Sparkles, ArrowUpRight } from "lucide-react";
+import { X, Send, CheckCircle2, Sparkles, ArrowUpRight, AlertCircle, Loader2 } from "lucide-react";
 import { SERVICES } from "../data/companyData";
 
 interface ProjectInquiryModalProps {
@@ -49,23 +49,56 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     if (!formData.name.trim() || !formData.email.trim() || !formData.details.trim()) {
       setErrorMessage("Please complete all required fields (Name, Email, Project Details).");
       return;
     }
+
     setErrorMessage("");
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          service: formData.service,
+          budget: formData.budget,
+          timeline: formData.timeline,
+          message: formData.details.trim(),
+          source: "Interactive Project Inquiry Modal",
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
       setSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      console.error("Modal inquiry submission error:", err);
+      setErrorMessage(
+        err?.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage("");
     setFormData({
       name: "",
       email: "",
@@ -130,12 +163,6 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              {errorMessage && (
-                <div className="p-3.5 rounded-xl bg-red-950/60 border border-red-500/30 text-xs text-red-200">
-                  {errorMessage}
-                </div>
-              )}
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-[#9A9A9A] uppercase tracking-wider mb-2">
@@ -235,21 +262,39 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
                 />
               </div>
 
+              {errorMessage && (
+                <div className="p-3.5 rounded-xl bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-medium flex items-start gap-2.5">
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-400" />
+                  <div className="flex-1 leading-relaxed">
+                    <p>{errorMessage}</p>
+                  </div>
+                </div>
+              )}
+
               <div className="pt-2 flex items-center justify-end gap-3">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-5 py-3 rounded-full text-xs font-semibold text-[#9A9A9A] hover:text-white transition-colors"
+                  className="px-5 py-3 rounded-full text-xs font-semibold text-[#9A9A9A] hover:text-white transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#A4C639] text-[#050505] hover:bg-[#B5D334] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(164,198,57,0.3)] disabled:opacity-50 cursor-pointer"
+                  className="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-[#A4C639] text-[#050505] hover:bg-[#B5D334] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(164,198,57,0.3)] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <span>{isSubmitting ? "Sending..." : "Submit Inquiry"}</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin text-[#050505]" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Inquiry</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
             </form>

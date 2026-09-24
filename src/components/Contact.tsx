@@ -8,6 +8,8 @@ import {
   Sparkles,
   ArrowUpRight,
   Clock,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 import { PERSONAL_PROFILE } from "../data/companyData";
 
@@ -23,14 +25,47 @@ export const Contact: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading) return;
+
+    setErrorMessage(null);
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          service: formData.service,
+          budget: formData.budget,
+          message: formData.message.trim(),
+          source: "Main Portfolio Contact Section",
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+
       setSubmitted(true);
-    }, 800);
+    } catch (err: any) {
+      console.error("Contact submission error:", err);
+      setErrorMessage(
+        err?.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -157,6 +192,7 @@ export const Contact: React.FC = () => {
                   <button
                     onClick={() => {
                       setSubmitted(false);
+                      setErrorMessage(null);
                       setFormData({
                         name: "",
                         email: "",
@@ -273,13 +309,31 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-start gap-2.5">
+                      <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+                      <div className="flex-1 leading-relaxed">
+                        <p>{errorMessage}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 rounded-full font-semibold text-sm tracking-wider uppercase bg-[#050505] text-white hover:bg-[#A4C639] hover:text-[#050505] transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(164,198,57,0.4)] flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 rounded-full font-semibold text-sm tracking-wider uppercase bg-[#050505] text-white hover:bg-[#A4C639] hover:text-[#050505] transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(164,198,57,0.4)] flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>{loading ? "Transmitting..." : "Start a Project"}</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin text-[#A4C639]" />
+                        <span>Transmitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Start a Project</span>
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { ArrowUpRight, Code, TrendingUp, Layout, Layers, Sparkles, CheckCircle2, Camera, Upload, RotateCcw, Image as ImageIcon } from "lucide-react";
+import React from "react";
+import { ArrowUpRight, Code, TrendingUp, Layout, Layers, CheckCircle2 } from "lucide-react";
 import { PERSONAL_PROFILE, HERO_FLOATING_CARDS } from "../data/companyData";
 
 interface HeroProps {
@@ -8,70 +8,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
-
-  const [portraitSrc, setPortraitSrc] = useState<string>(() => {
-    const saved = localStorage.getItem("nexora_user_portrait");
-    if (saved && (saved.startsWith("data:") || saved.startsWith("blob:"))) {
-      return saved;
-    }
-    return PERSONAL_PROFILE.images.heroPortrait;
-  });
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      processPhotoFile(file);
-    }
-  };
-
-  const processPhotoFile = (file: File) => {
-    if (!file.type.startsWith("image/")) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result as string;
-      if (dataUrl) {
-        setPortraitSrc(dataUrl);
-        try {
-          localStorage.setItem("nexora_user_portrait", dataUrl);
-        } catch {
-          // localStorage quota exceeded gracefully ignored
-        }
-        setUploadSuccess(true);
-        setTimeout(() => setUploadSuccess(false), 3500);
-      }
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
-    const file = e.dataTransfer.files?.[0];
-    if (file) {
-      processPhotoFile(file);
-    }
-  };
-
-  const handleResetPhoto = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    localStorage.removeItem("nexora_user_portrait");
-    setPortraitSrc(PERSONAL_PROFILE.images.heroPortrait);
-  };
-
-  const hasCustomPhoto = portraitSrc !== PERSONAL_PROFILE.images.heroPortrait;
-
   const iconMap: Record<string, React.ReactNode> = {
     Code: <Code className="w-4 h-4 text-[#A4C639]" />,
     TrendingUp: <TrendingUp className="w-4 h-4 text-[#A4C639]" />,
@@ -151,14 +87,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
             <div className="pt-6 border-t border-black/10 w-full flex flex-wrap items-center gap-6 text-xs text-[#555555]">
               <div className="flex items-center gap-2 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-[#607A16]" />
-                <span>50+ Web Projects Completed</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#607A16]" />
-                <span>Full-Funnel Digital Marketing</span>
-              </div>
-              <div className="flex items-center gap-2 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#607A16]" />
                 <span>SEO & Conversion Optimized</span>
               </div>
             </div>
@@ -176,73 +104,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
               <div className="absolute -inset-8 rounded-full bg-gradient-to-tr from-[#A4C639]/15 via-transparent to-black/5 blur-2xl pointer-events-none" />
 
               {/* Portrait Container */}
-              <div
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-                className={`relative z-10 rounded-2xl overflow-hidden bg-white shadow-2xl border transition-all duration-300 ${
-                  isDragging
-                    ? "border-[#A4C639] ring-4 ring-[#A4C639]/40 scale-[1.01]"
-                    : "border-black/10 ring-1 ring-[#A4C639]/30"
-                }`}
-              >
-                {/* Hidden File Input for Native File Selection */}
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleFileChange}
-                />
-
+              <div className="relative z-10 rounded-2xl overflow-hidden bg-white shadow-2xl border border-black/10 ring-1 ring-[#A4C639]/30 transition-all duration-300">
                 <img
-                  src={portraitSrc}
+                  src={PERSONAL_PROFILE.images.heroPortrait}
                   alt="NEXORA DIGITAL - Female Web Developer & Digital Marketer"
                   referrerPolicy="no-referrer"
                   className="w-full h-auto object-cover object-center max-h-[560px] transform hover:scale-[1.01] transition-transform duration-700"
                 />
-                
-                {/* Dragging Active Overlay */}
-                {isDragging && (
-                  <div className="absolute inset-0 z-40 bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center border-2 border-dashed border-[#A4C639] rounded-2xl">
-                    <Upload className="w-10 h-10 text-[#A4C639] animate-bounce mb-3" />
-                    <p className="text-sm font-bold text-white mb-1">Drop your exact photo here</p>
-                    <p className="text-xs text-neutral-300">Loads your 100% original photo instantly without alterations</p>
-                  </div>
-                )}
-
-                {/* Upload Success Toast */}
-                {uploadSuccess && (
-                  <div className="absolute top-4 inset-x-4 z-40 bg-[#0B0B0B]/95 text-white px-3.5 py-2 rounded-xl border border-[#A4C639] shadow-2xl backdrop-blur-md flex items-center justify-center gap-2 text-xs font-semibold animate-in fade-in slide-in-from-top-2 duration-300">
-                    <CheckCircle2 className="w-4 h-4 text-[#A4C639]" />
-                    <span>Exact photo loaded successfully!</span>
-                  </div>
-                )}
-
-                {/* Floating Interactive Action Badge */}
-                <div className="absolute bottom-3 inset-x-3 z-30 flex items-center justify-between pointer-events-auto">
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#050505]/95 hover:bg-black text-white text-[11px] font-bold border border-white/20 hover:border-[#A4C639] transition-all shadow-xl backdrop-blur-md cursor-pointer group"
-                    title="Upload your exact original photo (WhatsApp Image or camera roll)"
-                  >
-                    <Camera className="w-3.5 h-3.5 text-[#A4C639] group-hover:scale-110 transition-transform" />
-                    <span>{hasCustomPhoto ? "Replace Photo" : "Upload My Photo"}</span>
-                  </button>
-
-                  {hasCustomPhoto && (
-                    <button
-                      type="button"
-                      onClick={handleResetPhoto}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 hover:bg-black text-neutral-300 hover:text-white text-[10px] font-medium border border-white/10 hover:border-white/30 transition-all shadow-md backdrop-blur-md cursor-pointer"
-                      title="Reset to default portrait"
-                    >
-                      <RotateCcw className="w-3 h-3 text-neutral-400" />
-                      <span>Reset</span>
-                    </button>
-                  )}
-                </div>
 
                 {/* Subtle bottom gradient overlay for card blend */}
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 via-black/10 to-transparent pointer-events-none" />
