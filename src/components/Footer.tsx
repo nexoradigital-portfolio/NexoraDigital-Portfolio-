@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-sm text-[#9A9A9A] max-w-md">
-              {PERSONAL_PROFILE.roleTitle}. Engineering modern web platforms and orchestrating high-growth digital marketing strategies.
+              Bisma Imran • {PERSONAL_PROFILE.roleTitle}. Engineering modern web platforms and orchestrating high-growth digital marketing strategies.
             </p>
           </div>
 
@@ -61,6 +61,8 @@ export const Footer: React.FC = () => {
               <li><a href="#skills" className="hover:text-[#A4C639] transition-colors">Skills</a></li>
               <li><a href="#services" className="hover:text-[#A4C639] transition-colors">Services</a></li>
               <li><a href="#work" className="hover:text-[#A4C639] transition-colors">Selected Work</a></li>
+              <li><a href="#process" className="hover:text-[#A4C639] transition-colors">Process</a></li>
+              <li><a href="#contact" className="hover:text-[#A4C639] transition-colors">Contact</a></li>
             </ul>
           </div>
 

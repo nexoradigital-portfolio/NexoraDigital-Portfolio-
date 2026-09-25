@@ -57,18 +57,19 @@ export interface FaqItem {
 }
 
 export const PERSONAL_PROFILE = {
+  fullName: "Bisma Imran",
   brandName: "NEXORA DIGITAL",
   roleTitle: "Web Developer & Digital Marketer",
   heroHeading: "Building Digital Experiences That Grow Businesses.",
   heroSubHeading: "I Build Websites. I Grow Brands.",
   heroSupportingText:
-    "I'm a Web Developer and Digital Marketer focused on building modern websites, creating engaging digital experiences, and helping brands grow online.",
+    "Hi, I'm Bisma Imran. I specialize in building modern, high-performance websites and crafting digital marketing strategies that help brands grow online.",
   
-  aboutHeading: "More Than Code. I Build Digital Growth.",
+  aboutHeading: "More Than Code. I Build Websites & Digital Growth.",
   aboutDescription:
-    "I'm a Web Developer and Digital Marketer who combines technology, design and marketing to create digital experiences that are not only visually appealing but also built to achieve real business goals.",
+    "I'm Bisma Imran, a Web Developer and Digital Marketer. I combine modern engineering, intuitive UI/UX design, and commercial marketing strategies to build digital experiences that look exceptional and achieve real business goals.",
   aboutStory:
-    "With a dual focus on engineering robust web applications and designing high-converting acquisition funnels, I bridge the gap between technical architecture and measurable commercial traction. Every interface I craft is engineered for sub-second speed, seamless accessibility, and high conversion impact.",
+    "With a dual focus on engineering robust web applications and creating high-converting acquisition campaigns, I bridge the gap between technical code and measurable commercial traction. Every website I build is engineered for speed, responsiveness, and conversion impact.",
   
   brandStatement: {
     lead: "Code. Create. Grow.",
@@ -124,14 +125,12 @@ export const HERO_FLOATING_CARDS = [
   },
 ];
 
-// About Highlight Cards
+// About Highlight Cards (Focused, non-repetitive core strengths)
 export const ABOUT_PILLARS = [
-  { title: "Web Development", subtitle: "Clean semantic code & responsive layouts", icon: "Code2" },
-  { title: "Digital Marketing", subtitle: "Targeted campaigns engineered for ROI", icon: "TrendingUp" },
-  { title: "UI/UX Design", subtitle: "Intuitive, human-centric interface flows", icon: "Palette" },
-  { title: "Brand Strategy", subtitle: "Authentic positioning & customer resonance", icon: "Sparkles" },
-  { title: "WordPress", subtitle: "Custom scalable themes & headless CMS", icon: "Layers" },
-  { title: "Social Media", subtitle: "Multi-channel community & brand resonance", icon: "Share2" },
+  { title: "Clean Engineering", subtitle: "Fast, semantic, mobile-first web applications", icon: "Code2" },
+  { title: "Growth Marketing", subtitle: "Targeted campaigns, SEO & measurable ROI", icon: "TrendingUp" },
+  { title: "User-Centered UX", subtitle: "Intuitive layouts designed to convert visitors", icon: "Palette" },
+  { title: "End-to-End Delivery", subtitle: "From initial concept to launch and ongoing growth", icon: "Rocket" },
 ];
 
 // Skills Structure

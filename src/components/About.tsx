@@ -3,12 +3,9 @@ import {
   Code2,
   TrendingUp,
   Palette,
-  Search,
-  Layers,
-  Share2,
-  ArrowUpRight,
+  Rocket,
   Sparkles,
-  Terminal,
+  ArrowUpRight,
 } from "lucide-react";
 import { PERSONAL_PROFILE, ABOUT_PILLARS } from "../data/companyData";
 
@@ -21,9 +18,7 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
     Code2: <Code2 className="w-5 h-5 text-[#A4C639]" />,
     TrendingUp: <TrendingUp className="w-5 h-5 text-[#A4C639]" />,
     Palette: <Palette className="w-5 h-5 text-[#A4C639]" />,
-    Sparkles: <Sparkles className="w-5 h-5 text-[#A4C639]" />,
-    Layers: <Layers className="w-5 h-5 text-[#A4C639]" />,
-    Share2: <Share2 className="w-5 h-5 text-[#A4C639]" />,
+    Rocket: <Rocket className="w-5 h-5 text-[#A4C639]" />,
   };
 
   return (
@@ -38,12 +33,12 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
         <div className="flex flex-col items-start max-w-3xl mb-8 md:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest text-[#A4C639] uppercase mb-3 md:mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>About The Founder & Strategist</span>
+            <span>About Bisma Imran</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white mb-3 md:mb-6 leading-tight">
             More Than Code. <br className="hidden sm:inline" />
-            <span className="text-[#A4C639]">I Build Digital Growth.</span>
+            <span className="text-[#A4C639]">I Build Websites & Digital Growth.</span>
           </h2>
 
           <p className="text-base sm:text-xl text-[#F5F5F5] font-normal leading-relaxed mb-3 md:mb-4">
@@ -63,7 +58,7 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
             <div className="relative h-full min-h-[260px] sm:min-h-[320px] md:min-h-[380px] rounded-2xl overflow-hidden border border-white/10 bg-[#111111] shadow-2xl">
               <img
                 src={PERSONAL_PROFILE.images.aboutWorkspace}
-                alt="Working at workstation - NEXORA DIGITAL"
+                alt="Working at workstation - Bisma Imran"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -73,18 +68,18 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-4 rounded-xl bg-[#0B0B0B]/90 backdrop-blur-md border border-[#A4C639]/30">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#A4C639]">
-                    Full-Stack Mastery
+                    Bisma Imran
                   </span>
                   <div className="w-2 h-2 rounded-full bg-[#A4C639] animate-pulse" />
                 </div>
                 <p className="text-[11px] sm:text-xs text-neutral-300">
-                  Engineering modern, responsive web systems paired with high-conversion organic & paid growth.
+                  Full-Stack Web Developer & Digital Marketing Strategist available for client projects worldwide.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* 6 Information Cards Grid */}
+          {/* 4 Focused Core Strength Cards Grid */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
             {ABOUT_PILLARS.map((pillar, idx) => (
               <div
@@ -109,10 +104,14 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
                   </p>
                 </div>
 
-                <div className="pt-3 mt-3 sm:pt-4 sm:mt-4 border-t border-white/5 flex items-center gap-1.5 text-xs text-[#9A9A9A] group-hover:text-white transition-colors">
-                  <span className="font-medium">Explore capability</span>
+                <button
+                  type="button"
+                  onClick={onOpenInquiry}
+                  className="pt-3 mt-3 sm:pt-4 sm:mt-4 border-t border-white/5 flex items-center gap-1.5 text-xs text-[#9A9A9A] group-hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  <span className="font-medium">Get in touch</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#A4C639] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </div>
+                </button>
               </div>
             ))}
           </div>

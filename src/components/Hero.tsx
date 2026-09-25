@@ -39,12 +39,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
           {/* LEFT COLUMN: Narrative & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start pr-0 lg:pr-6">
             
-            {/* Small Brand Label */}
+            {/* Small Brand & Personal Name Label */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4 md:mb-6 shadow-sm border border-black/10">
               <span className="w-2 h-2 rounded-full bg-[#A4C639] animate-pulse" />
-              <span>{PERSONAL_PROFILE.brandName}</span>
+              <span>BISMA IMRAN</span>
               <span className="text-[#9A9A9A]">/</span>
-              <span className="text-[#A4C639] font-medium tracking-normal">{PERSONAL_PROFILE.roleTitle}</span>
+              <span className="text-[#A4C639] font-medium tracking-normal">Web Developer & Digital Marketer</span>
             </div>
 
             {/* Main Heading with Green Highlights */}
@@ -60,9 +60,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
               </span>
             </h1>
 
-            {/* Supporting Text */}
+            {/* Supporting Text with Personal Introduction */}
             <p className="text-base sm:text-xl text-[#444444] font-normal leading-relaxed max-w-xl mb-6 md:mb-8">
-              {PERSONAL_PROFILE.heroSupportingText}
+              Hi, I'm <strong className="text-[#111111] font-bold">Bisma Imran</strong>. I build fast, modern websites and execute targeted digital marketing campaigns designed to turn visitors into long-term clients.
             </p>
 
             {/* Action Buttons */}

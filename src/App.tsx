@@ -13,10 +13,7 @@ import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Services } from "./components/Services";
 import { SelectedWork } from "./components/SelectedWork";
-import { Statistics } from "./components/Statistics";
 import { Process } from "./components/Process";
-import { BrandStatement } from "./components/BrandStatement";
-import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CaseStudyModal } from "./components/CaseStudyModal";
@@ -56,40 +53,31 @@ export default function App() {
           onViewWork={handleViewWork}
         />
 
-        {/* 2. About / Personal Introduction (BLACK Background - #050505) */}
+        {/* 2. About Me (BLACK Background - #050505) */}
         <About onOpenInquiry={handleOpenInquiry} />
 
-        {/* 3. Skills: "What I Do" (WHITE Background) */}
+        {/* 3. Skills / Expertise (WHITE Background) */}
         <Skills />
 
-        {/* 4. Services I Offer (BLACK Background - #0B0B0B) */}
+        {/* 4. Services (BLACK Background - #0B0B0B) */}
         <Services
           onSelectService={handleSelectService}
           onOpenInquiry={handleOpenInquiry}
         />
 
-        {/* 5. Selected Work (WHITE Background) */}
+        {/* 5. Selected Work / Projects (WHITE Background) */}
         <SelectedWork
           onSelectProject={(project) => setSelectedCaseStudy(project)}
         />
 
-        {/* 6. Experience / Statistics (BLACK Background - #050505) */}
-        <Statistics />
-
-        {/* 7. How I Work / Process (WHITE Background) */}
+        {/* 6. Simple Process (BLACK Background - #050505) */}
         <Process />
 
-        {/* 8. Personal Brand Section: "Code. Create. Grow." (BLACK Background - #050505) */}
-        <BrandStatement onOpenInquiry={handleOpenInquiry} />
-
-        {/* 9. Testimonials (WHITE Background) */}
-        <Testimonials />
-
-        {/* 10. Contact: "Let's Work Together" (WHITE Background) */}
+        {/* 7. Contact (WHITE Background) */}
         <Contact />
       </main>
 
-      {/* 11. Footer (BLACK Background - #050505) */}
+      {/* Footer (BLACK Background - #050505) */}
       <Footer />
 
       {/* Interactive Case Study Detail Modal */}
