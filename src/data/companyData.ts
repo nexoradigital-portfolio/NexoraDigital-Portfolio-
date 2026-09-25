@@ -83,6 +83,8 @@ export const PERSONAL_PROFILE = {
   contact: {
     email: "nexoradigital1143@gmail.com",
     phone: "03152955520",
+    phoneTel: "+923152955520",
+    whatsappUrl: "https://wa.me/923152955520",
     location: "Global Remote / Available Worldwide",
     availability: "Available for new projects & retainers",
   },

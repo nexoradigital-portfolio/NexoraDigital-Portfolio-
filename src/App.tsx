@@ -20,19 +20,16 @@ import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CaseStudyModal } from "./components/CaseStudyModal";
-import { ProjectInquiryModal } from "./components/ProjectInquiryModal";
 import { ProjectItem, ServiceItem } from "./data/companyData";
 
 export default function App() {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<ProjectItem | null>(null);
-  const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-  const [selectedServiceForInquiry, setSelectedServiceForInquiry] = useState<string>("Website Development");
 
-  const handleOpenInquiry = (serviceTitle?: string) => {
-    if (serviceTitle) {
-      setSelectedServiceForInquiry(serviceTitle);
+  const handleOpenInquiry = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
-    setInquiryModalOpen(true);
   };
 
   const handleViewWork = () => {
@@ -42,25 +39,25 @@ export default function App() {
     }
   };
 
-  const handleSelectService = (service: ServiceItem) => {
-    handleOpenInquiry(service.title);
+  const handleSelectService = (_service: ServiceItem) => {
+    handleOpenInquiry();
   };
 
   return (
     <div className="min-h-screen bg-white text-[#111111] selection:bg-[#A4C639]/30 selection:text-black">
       {/* Sticky Top Navigation Bar */}
-      <Navbar onOpenInquiry={() => handleOpenInquiry()} />
+      <Navbar onOpenInquiry={handleOpenInquiry} />
 
       {/* Main Flow with Alternating Backgrounds */}
       <main>
         {/* 1. Hero Section (WHITE Background) */}
         <Hero
-          onOpenInquiry={() => handleOpenInquiry()}
+          onOpenInquiry={handleOpenInquiry}
           onViewWork={handleViewWork}
         />
 
         {/* 2. About / Personal Introduction (BLACK Background - #050505) */}
-        <About onOpenInquiry={() => handleOpenInquiry()} />
+        <About onOpenInquiry={handleOpenInquiry} />
 
         {/* 3. Skills: "What I Do" (WHITE Background) */}
         <Skills />
@@ -68,7 +65,7 @@ export default function App() {
         {/* 4. Services I Offer (BLACK Background - #0B0B0B) */}
         <Services
           onSelectService={handleSelectService}
-          onOpenInquiry={() => handleOpenInquiry()}
+          onOpenInquiry={handleOpenInquiry}
         />
 
         {/* 5. Selected Work (WHITE Background) */}
@@ -83,12 +80,12 @@ export default function App() {
         <Process />
 
         {/* 8. Personal Brand Section: "Code. Create. Grow." (BLACK Background - #050505) */}
-        <BrandStatement onOpenInquiry={() => handleOpenInquiry()} />
+        <BrandStatement onOpenInquiry={handleOpenInquiry} />
 
         {/* 9. Testimonials (WHITE Background) */}
         <Testimonials />
 
-        {/* 10. Contact: "Let's Build Something Great" (WHITE Background) */}
+        {/* 10. Contact: "Let's Work Together" (WHITE Background) */}
         <Contact />
       </main>
 
@@ -99,17 +96,10 @@ export default function App() {
       <CaseStudyModal
         project={selectedCaseStudy}
         onClose={() => setSelectedCaseStudy(null)}
-        onInquire={(title) => {
+        onInquire={(_title) => {
           setSelectedCaseStudy(null);
-          handleOpenInquiry(title);
+          handleOpenInquiry();
         }}
-      />
-
-      {/* Quick Project Inquiry Modal */}
-      <ProjectInquiryModal
-        isOpen={inquiryModalOpen}
-        onClose={() => setInquiryModalOpen(false)}
-        defaultService={selectedServiceForInquiry}
       />
     </div>
   );
