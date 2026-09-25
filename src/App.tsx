@@ -44,7 +44,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#A4C639]/30 selection:text-black">
+    <div className="min-h-screen bg-white text-[#111111] selection:bg-[#A4C639]/30 selection:text-black overflow-x-hidden">
       {/* Sticky Top Navigation Bar */}
       <Navbar onOpenInquiry={handleOpenInquiry} />
 

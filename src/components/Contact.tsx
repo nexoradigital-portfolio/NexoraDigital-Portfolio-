@@ -35,7 +35,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 bg-white text-[#111111] relative overflow-hidden border-t border-black/5"
+      className="py-12 md:py-32 bg-white text-[#111111] relative overflow-hidden border-t border-black/5"
     >
       {/* Subtle green ambient light */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#A4C639]/12 rounded-full blur-3xl pointer-events-none" />
@@ -43,8 +43,8 @@ export const Contact: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black text-white text-xs font-semibold tracking-widest uppercase mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black text-white text-xs font-semibold tracking-widest uppercase mb-3 md:mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#A4C639]" />
             <span>Direct Contact</span>
           </div>
@@ -52,19 +52,19 @@ export const Contact: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#111111] tracking-tight">
             Let's Work Together
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#555555] leading-relaxed">
+          <p className="mt-3 md:mt-4 text-base sm:text-lg text-[#555555] leading-relaxed">
             Have a project in mind? Get in touch with me directly.
           </p>
         </div>
 
         {/* 3 Direct Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mb-6 md:mb-14">
           {/* Card 1: EMAIL */}
-          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
+          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-5 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-black text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-[#050505] transition-all">
-                  <Mail className="w-6 h-6" />
+              <div className="flex items-center justify-between mb-3.5 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-[#050505] transition-all">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <button
                   type="button"
@@ -90,17 +90,17 @@ export const Contact: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#777777] block mb-1">
                 Email
               </span>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-[#111111] break-all mb-3 group-hover:text-[#607A16] transition-colors">
+              <h3 className="text-base sm:text-xl font-display font-bold text-[#111111] break-all mb-2 sm:mb-3 group-hover:text-[#607A16] transition-colors">
                 nexoradigital1143@gmail.com
               </h3>
-              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-4 sm:mb-6">
                 Send your requirements, RFPs, or collaboration inquiries directly to my primary inbox.
               </p>
             </div>
 
             <a
               href="mailto:nexoradigital1143@gmail.com"
-              className="w-full py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
+              className="w-full py-3 sm:py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
             >
               <span>Send Email</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -108,11 +108,11 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Card 2: PHONE / CALL */}
-          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
+          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-5 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-black text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-[#050505] transition-all">
-                  <Phone className="w-6 h-6" />
+              <div className="flex items-center justify-between mb-3.5 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 group-hover:bg-[#050505] transition-all">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <button
                   type="button"
@@ -138,17 +138,17 @@ export const Contact: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#777777] block mb-1">
                 Phone
               </span>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-[#111111] mb-3 group-hover:text-[#607A16] transition-colors">
+              <h3 className="text-base sm:text-xl font-display font-bold text-[#111111] mb-2 sm:mb-3 group-hover:text-[#607A16] transition-colors">
                 03152955520
               </h3>
-              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-4 sm:mb-6">
                 Call directly for immediate project consultation, timeline estimation, and discussions.
               </p>
             </div>
 
             <a
               href="tel:+923152955520"
-              className="w-full py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
+              className="w-full py-3 sm:py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
             >
               <span>Call Now</span>
               <Phone className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
@@ -156,13 +156,13 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Card 3: WHATSAPP */}
-          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
+          <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-5 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#607A16]/50 hover:bg-[#F9FAF5] hover:shadow-[0_12px_35px_rgba(164,198,57,0.12)] group">
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-[#050505] text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 transition-all">
+              <div className="flex items-center justify-between mb-3.5 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#050505] text-[#A4C639] flex items-center justify-center shadow-md group-hover:scale-105 transition-all">
                   {/* WhatsApp SVG Icon */}
                   <svg
-                    className="w-6 h-6 fill-current"
+                    className="w-5 h-5 sm:w-6 sm:h-6 fill-current"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -177,10 +177,10 @@ export const Contact: React.FC = () => {
               <span className="text-xs font-bold uppercase tracking-wider text-[#777777] block mb-1">
                 WhatsApp
               </span>
-              <h3 className="text-lg sm:text-xl font-display font-bold text-[#111111] mb-3 group-hover:text-[#607A16] transition-colors">
+              <h3 className="text-base sm:text-xl font-display font-bold text-[#111111] mb-2 sm:mb-3 group-hover:text-[#607A16] transition-colors">
                 03152955520
               </h3>
-              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-[#555555] leading-relaxed mb-4 sm:mb-6">
                 Fastest way to reach me for real-time messaging, quick voice notes, and fast project kickoff.
               </p>
             </div>
@@ -189,7 +189,7 @@ export const Contact: React.FC = () => {
               href="https://wa.me/923152955520"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
+              className="w-full py-3 sm:py-3.5 px-5 rounded-full font-semibold text-xs uppercase tracking-wider bg-black text-white hover:bg-[#A4C639] hover:text-black transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(164,198,57,0.35)]"
             >
               <span>Chat on WhatsApp</span>
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -198,10 +198,10 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Supporting Information & Social Channels Banner */}
-        <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-[#607A16] animate-pulse" />
+        <div className="rounded-3xl bg-[#F5F5F5] border border-black/10 p-4 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#607A16] animate-pulse" />
               <span className="text-xs sm:text-sm font-semibold text-[#111111]">
                 {PERSONAL_PROFILE.contact.availability}
               </span>
@@ -220,7 +220,7 @@ export const Contact: React.FC = () => {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-full bg-white border border-black/10 hover:border-[#607A16] hover:bg-[#A4C639]/10 text-xs font-semibold text-[#111111] transition-all flex items-center gap-1.5"
+                className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white border border-black/10 hover:border-[#607A16] hover:bg-[#A4C639]/10 text-xs font-semibold text-[#111111] transition-all flex items-center gap-1.5"
               >
                 <span>{social.name}</span>
                 <ArrowUpRight className="w-3 h-3 text-[#607A16]" />

@@ -8,14 +8,14 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#050505] text-white pt-20 pb-12 border-t border-white/10 relative overflow-hidden">
+    <footer className="bg-[#050505] text-white pt-12 pb-8 md:pt-20 md:pb-12 border-t border-white/10 relative overflow-hidden">
       {/* Subtle green ambient light */}
       <div className="absolute bottom-0 right-10 w-96 h-48 bg-[#A4C639]/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         
         {/* Top Footer Banner */}
-        <div className="pb-16 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="pb-8 md:pb-16 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <div className="w-8 h-8 rounded-lg bg-black border border-[#A4C639]/60 flex items-center justify-center font-display font-black text-sm text-[#A4C639]">
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Middle Navigation Links */}
-        <div className="py-12 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        <div className="py-8 md:py-12 grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8">
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               Navigation
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777777]">
+        <div className="pt-6 md:pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#777777]">
           <p>© {new Date().getFullYear()} {PERSONAL_PROFILE.brandName}. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>Code. Create. Grow.</span>

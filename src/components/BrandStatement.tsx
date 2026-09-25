@@ -8,7 +8,7 @@ interface BrandStatementProps {
 
 export const BrandStatement: React.FC<BrandStatementProps> = ({ onOpenInquiry }) => {
   return (
-    <section id="brand" className="py-28 md:py-36 bg-[#050505] text-white relative overflow-hidden border-t border-white/5">
+    <section id="brand" className="py-14 md:py-36 bg-[#050505] text-white relative overflow-hidden border-t border-white/5">
       {/* Background Animated Geometric Elements & Green Line Art */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -40,20 +40,20 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ onOpenInquiry })
       <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10 text-center">
         
         {/* Brand Tag */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest text-[#A4C639] uppercase mb-8 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest text-[#A4C639] uppercase mb-4 md:mb-8 shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Core Philosophy</span>
         </div>
 
         {/* Large Typography: Code. Create. Grow. */}
-        <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black tracking-tight leading-[0.95] mb-8 text-white">
+        <h2 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black tracking-tight leading-[0.95] mb-4 md:mb-8 text-white">
           <span className="text-white hover:text-[#A4C639] transition-colors">CODE.</span>{" "}
           <span className="text-[#A4C639]">CREATE.</span>{" "}
           <span className="text-[#B5D334]">GROW.</span>
         </h2>
 
         {/* Supporting Narrative */}
-        <p className="text-xl sm:text-2xl md:text-3xl text-[#F5F5F5] font-light max-w-3xl mx-auto leading-relaxed mb-12">
+        <p className="text-base sm:text-2xl md:text-3xl text-[#F5F5F5] font-light max-w-3xl mx-auto leading-relaxed mb-6 md:mb-12">
           "{PERSONAL_PROFILE.brandStatement.body}"
         </p>
 
@@ -61,7 +61,7 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ onOpenInquiry })
         <div className="flex justify-center">
           <button
             onClick={onOpenInquiry}
-            className="px-9 py-4 rounded-full font-semibold text-sm tracking-wider uppercase bg-[#A4C639] text-[#050505] hover:bg-[#B5D334] transition-all duration-300 shadow-[0_0_35px_rgba(164,198,57,0.35)] hover:shadow-[0_0_50px_rgba(164,198,57,0.5)] flex items-center gap-3 cursor-pointer group hover:scale-105"
+            className="px-7 py-3.5 sm:px-9 sm:py-4 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase bg-[#A4C639] text-[#050505] hover:bg-[#B5D334] transition-all duration-300 shadow-[0_0_35px_rgba(164,198,57,0.35)] hover:shadow-[0_0_50px_rgba(164,198,57,0.5)] flex items-center gap-2.5 sm:gap-3 cursor-pointer group hover:scale-105"
           >
             <span>Collaborate With NEXORA</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -69,7 +69,7 @@ export const BrandStatement: React.FC<BrandStatementProps> = ({ onOpenInquiry })
         </div>
 
         {/* 3 Pill Badges */}
-        <div className="mt-16 pt-10 border-t border-white/10 flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-xs text-[#9A9A9A]">
+        <div className="mt-8 pt-6 sm:mt-16 sm:pt-10 border-t border-white/10 flex flex-wrap items-center justify-center gap-4 sm:gap-16 text-xs text-[#9A9A9A]">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-[#A4C639]" />
             <span className="font-semibold text-white">Robust Engineering</span>
