@@ -1,19 +1,18 @@
 /**
- * NEXORA DIGITAL - Personal Portfolio Website
+ * BISMA IMRAN - Personal Portfolio Website
  * Web Developer & Digital Marketer
  * 
  * Strict Black, White & Green Palette
  * Alternating White and Black background sections
+ * Concise, high-impact flow
  */
 
 import React, { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { Services } from "./components/Services";
-import { SelectedWork } from "./components/SelectedWork";
-import { Process } from "./components/Process";
+import { SkillsAndServices } from "./components/SkillsAndServices";
+import { FeaturedProjects } from "./components/FeaturedProjects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CaseStudyModal } from "./components/CaseStudyModal";
@@ -30,7 +29,7 @@ export default function App() {
   };
 
   const handleViewWork = () => {
-    const workSection = document.getElementById("work");
+    const workSection = document.getElementById("projects") || document.getElementById("work");
     if (workSection) {
       workSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -53,31 +52,25 @@ export default function App() {
           onViewWork={handleViewWork}
         />
 
-        {/* 2. About Me (BLACK Background - #050505) */}
+        {/* 2. Short About Me (BLACK Background - #050505) */}
         <About onOpenInquiry={handleOpenInquiry} />
 
-        {/* 3. Skills / Expertise (WHITE Background) */}
-        <Skills />
-
-        {/* 4. Services (BLACK Background - #0B0B0B) */}
-        <Services
-          onSelectService={handleSelectService}
+        {/* 3. Skills & Services (WHITE Background) */}
+        <SkillsAndServices
           onOpenInquiry={handleOpenInquiry}
+          onSelectService={handleSelectService}
         />
 
-        {/* 5. Selected Work / Projects (WHITE Background) */}
-        <SelectedWork
+        {/* 4. Featured Projects (BLACK Background - #0B0B0B) */}
+        <FeaturedProjects
           onSelectProject={(project) => setSelectedCaseStudy(project)}
         />
 
-        {/* 6. Simple Process (BLACK Background - #050505) */}
-        <Process />
-
-        {/* 7. Contact (WHITE Background) */}
+        {/* 5. Contact (WHITE Background) */}
         <Contact />
       </main>
 
-      {/* Footer (BLACK Background - #050505) */}
+      {/* 6. Footer (BLACK Background - #050505) */}
       <Footer />
 
       {/* Interactive Case Study Detail Modal */}

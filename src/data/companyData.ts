@@ -8,12 +8,13 @@
 
 import heroPortrait from "../assets/images/founder_portrait_1790159530365.jpg";
 import aboutWorkspace from "../assets/images/regenerated_image_1790224806664.jpg";
+import mockupInvestlink from "../assets/images/mockup_investlink_1790656440383.jpg";
+import mockupPromoSavy from "../assets/images/mockup_promosavy_1790660259410.jpg";
+import mockupEcooye from "../assets/images/mockup_ecooye_1790663609888.jpg";
 import mockupNexora from "../assets/images/mockup_nexora_business_1790154001083.jpg";
 import mockupLumina from "../assets/images/mockup_lumina_ecommerce_1790154022228.jpg";
 import mockupGreenEdge from "../assets/images/mockup_greenedge_digital_1790154039310.jpg";
 import mockupFinova from "../assets/images/mockup_finova_fintech_1790154060834.jpg";
-import mockupVista from "../assets/images/mockup_vista_social_1790154079612.jpg";
-import mockupOrbit from "../assets/images/mockup_orbit_seo_1790154096483.jpg";
 
 export interface ProjectItem {
   id: string;
@@ -29,6 +30,9 @@ export interface ProjectItem {
   challenge: string;
   solution: string;
   impact: string;
+  liveUrl?: string;
+  role?: string;
+  featured?: boolean;
 }
 
 export interface ServiceItem {
@@ -217,14 +221,81 @@ export const SERVICES: ServiceItem[] = [
   },
 ];
 
-// 6 Selected Projects
+// Featured Projects
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "nexora-business",
+    id: "investlink-advisor",
     number: "01",
+    title: "Investlink Advisor",
+    category: "Web Development / Finance Website",
+    description: "A professional finance and investment website built for Investlink Advisor, featuring investment services, mutual funds, stock market information, tax planning, and Shariah-compliant investment solutions.",
+    role: "Web Development & Digital Experience",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Financial Data UI", "Responsive Design", "SEO"],
+    image: mockupInvestlink,
+    client: "Investlink Advisor",
+    year: "2026",
+    liveUrl: "https://investlinkadvisor.com/",
+    featured: true,
+    metrics: [
+      { label: "Core Web Vitals", value: "98/100" },
+      { label: "Client Inquiries", value: "+160%" },
+      { label: "Mobile Speed", value: "0.7s" },
+    ],
+    challenge: "Building a trusted, compliant digital financial hub that communicates complex investment products (mutual funds, stocks, tax planning, Shariah-compliant solutions) in an accessible, high-converting format.",
+    solution: "Engineered a high-performance web platform with clear financial service pathways, institutional grade visual hierarchy, mobile-first design, and seamless consultation booking.",
+    impact: "Established a professional digital authority for Investlink Advisor, driving a 160% surge in qualified inbound advisory consultations.",
+  },
+  {
+    id: "promosavy",
+    number: "02",
+    title: "PromoSavy",
+    category: "Web Development / Website Development",
+    description: "A modern promotional website built to present digital offers, services, and promotional content through a clean and engaging web experience.",
+    role: "Web Development & Digital Experience",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "Promotional UI", "SEO"],
+    image: mockupPromoSavy,
+    client: "PromoSavy",
+    year: "2026",
+    liveUrl: "http://promosavy.com/",
+    featured: true,
+    metrics: [
+      { label: "User Engagement", value: "+145%" },
+      { label: "Load Time", value: "0.6s" },
+      { label: "Offer Click-Through", value: "+38%" },
+    ],
+    challenge: "Presenting dynamic promotional deals, discount campaigns, and digital services in an intuitive, engaging interface that maximizes user engagement without visual clutter.",
+    solution: "Built a lightweight, responsive promotional website with structured offer categories, clear call-to-action touchpoints, and mobile-optimized browsing speed.",
+    impact: "Elevated user interaction rates and brand retention, delivering an engaging promotional experience with sub-second page performance.",
+  },
+  {
+    id: "ecooye",
+    number: "03",
+    title: "Ecooye",
+    category: "E-commerce / Mobile & Electronics Website",
+    description: "A modern e-commerce website for mobile phones and electronics, designed with a clean shopping experience, product-focused layout, and responsive design.",
+    role: "Web Development & E-commerce Development",
+    technologies: ["WordPress", "WooCommerce", "Tailwind CSS", "Product Catalog UX", "Responsive Design", "Payment Gateway"],
+    image: mockupEcooye,
+    client: "Ecooye Electronics",
+    year: "2026",
+    liveUrl: "https://ecooye.com/",
+    featured: true,
+    metrics: [
+      { label: "Mobile Conversions", value: "+46%" },
+      { label: "Page Speed", value: "0.8s" },
+      { label: "Catalog Discovery", value: "+170%" },
+    ],
+    challenge: "Structuring a vast electronic and mobile catalog with clear technical specifications, smooth product filtering, and an effortless checkout experience.",
+    solution: "Engineered a clean, product-centric e-commerce platform with intuitive category hierarchy, fast search, and mobile-optimized 1-tap ordering.",
+    impact: "Delivered a 46% increase in mobile purchase completions and streamlined electronics product discovery for customers.",
+  },
+  {
+    id: "nexora-business",
+    number: "04",
     title: "NEXORA Business Website",
     category: "Web Development",
     description: "Flagship corporate website featuring an ultra-modern dark aesthetic, responsive architecture, and dynamic project showcases.",
+    role: "Full-Stack Development & Architecture",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Performance Optimization"],
     image: mockupNexora,
     client: "NEXORA DIGITAL",
@@ -240,10 +311,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "lumina-ecommerce",
-    number: "02",
+    number: "05",
     title: "LUMINA E-Commerce",
     category: "Website + UI/UX",
     description: "Minimalist luxury retail experience with seamless product discovery, intuitive checkout flows, and responsive mobile architecture.",
+    role: "WordPress & WooCommerce Engineering",
     technologies: ["WordPress", "WooCommerce", "Figma UI/UX", "Tailwind CSS", "Stripe API"],
     image: mockupLumina,
     client: "Lumina Lifestyle",
@@ -259,10 +331,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "greenedge-digital",
-    number: "03",
+    number: "06",
     title: "GREENEDGE DIGITAL",
     category: "Digital Marketing",
     description: "Comprehensive multi-channel digital growth engine combining high-intent Google Ads, retargeting funnels, and real-time analytics.",
+    role: "Growth Marketing & Campaign Architecture",
     technologies: ["Google Ads", "Meta Ads", "GA4 Analytics", "Conversion Copywriting", "GTM Tracking"],
     image: mockupGreenEdge,
     client: "GreenEdge Solutions",
@@ -278,10 +351,11 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "finova-fintech",
-    number: "04",
+    number: "07",
     title: "FINOVA",
     category: "Fintech Website",
     description: "Next-generation digital banking web application with interactive investment calculators and enterprise-grade UI security standards.",
+    role: "Frontend Development & UI Design",
     technologies: ["React", "JavaScript", "Responsive UI", "Tailwind CSS", "Data Visualizations"],
     image: mockupFinova,
     client: "Finova Technologies",
@@ -294,44 +368,6 @@ export const PROJECTS: ProjectItem[] = [
     challenge: "Communicating complex financial instruments to everyday consumers in an accessible, trust-inspiring format.",
     solution: "Crafted intuitive interactive charts, streamlined onboarding modals, and crisp responsive tables.",
     impact: "Secured over 85,000 verified user accounts within the initial four months post-launch.",
-  },
-  {
-    id: "vista-social",
-    number: "05",
-    title: "VISTA SOCIAL",
-    category: "Social Media Marketing",
-    description: "Content strategy and community growth campaign built to cultivate high-intent engagement across Instagram and LinkedIn.",
-    technologies: ["Content Strategy", "Meta Business Suite", "Graphic Design", "Video Campaigns", "Audience Growth"],
-    image: mockupVista,
-    client: "Vista Collective",
-    year: "2025",
-    metrics: [
-      { label: "Organic Reach", value: "450K+" },
-      { label: "Engagement Rate", value: "6.2%" },
-      { label: "Inbound DMs / Leads", value: "320+" },
-    ],
-    challenge: "Low algorithmic engagement and inconsistent visual presence across disparate social platforms.",
-    solution: "Developed an authoritative aesthetic playbook, carousel education formats, and active community conversation workflows.",
-    impact: "Grew verified follower base from 3,000 to over 38,000 active subscribers organically.",
-  },
-  {
-    id: "orbit-campaign",
-    number: "06",
-    title: "ORBIT CLOUD PLATFORM",
-    category: "Web & Brand Campaign",
-    description: "Full-stack cloud portal web application and multi-channel acquisition strategy for an enterprise cloud management startup.",
-    technologies: ["React", "Tailwind CSS", "Brand Strategy", "Campaign Analytics", "UX Prototyping"],
-    image: mockupOrbit,
-    client: "Orbit Cloud Solutions",
-    year: "2025",
-    metrics: [
-      { label: "Demo Sign-ups", value: "+280%" },
-      { label: "User Retention", value: "92%" },
-      { label: "Lead Inquiries", value: "450+/mo" },
-    ],
-    challenge: "The client struggled with conveying a complex cloud management product and had low conversion rates on demo sign-ups.",
-    solution: "Crafted a high-converting web presence, interactive feature walk-throughs, and an integrated inbound digital marketing campaign.",
-    impact: "Surpassed target qualified demo sign-ups by 280% within the initial 90 days following rollout.",
   },
 ];
 

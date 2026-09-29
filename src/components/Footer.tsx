@@ -58,24 +58,22 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#9A9A9A]">
               <li><a href="#home" className="hover:text-[#A4C639] transition-colors">Home</a></li>
               <li><a href="#about" className="hover:text-[#A4C639] transition-colors">About</a></li>
-              <li><a href="#skills" className="hover:text-[#A4C639] transition-colors">Skills</a></li>
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">Services</a></li>
-              <li><a href="#work" className="hover:text-[#A4C639] transition-colors">Selected Work</a></li>
-              <li><a href="#process" className="hover:text-[#A4C639] transition-colors">Process</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">Skills & Services</a></li>
+              <li><a href="#projects" className="hover:text-[#A4C639] transition-colors">Featured Projects</a></li>
               <li><a href="#contact" className="hover:text-[#A4C639] transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Core Services
+              Core Capabilities
             </h4>
             <ul className="space-y-2.5 text-xs text-[#9A9A9A]">
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">Website Development</a></li>
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">WordPress Development</a></li>
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">Digital Marketing</a></li>
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">Brand & Content Strategy</a></li>
-              <li><a href="#services" className="hover:text-[#A4C639] transition-colors">UI/UX Design</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">Website Development</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">WordPress Engineering</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">Digital Marketing Campaigns</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">Conversion Rate Optimization</a></li>
+              <li><a href="#skills-services" className="hover:text-[#A4C639] transition-colors">UI/UX & Mobile Design</a></li>
             </ul>
           </div>
 

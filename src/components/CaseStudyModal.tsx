@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { X, ArrowUpRight, CheckCircle, Calendar, Building, Sparkles } from "lucide-react";
+import { X, ArrowUpRight, CheckCircle, Calendar, Building, Sparkles, ExternalLink } from "lucide-react";
 import { ProjectItem } from "../data/companyData";
 
 interface CaseStudyModalProps {
@@ -61,9 +61,24 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           
           {/* Main Title & Client Banner */}
           <div>
-            <h2 id="case-study-title" className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-white mb-4">
-              {project.title}
-            </h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <h2 id="case-study-title" className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-white">
+                {project.title}
+              </h2>
+
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#A4C639] text-[#050505] font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_20px_rgba(164,198,57,0.3)] self-start sm:self-auto shrink-0"
+                >
+                  <span>View Live Website</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
+
             <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs text-[#9A9A9A] pb-6 border-b border-white/10">
               <div className="flex items-center gap-1.5">
                 <Building className="w-4 h-4 text-[#A4C639]" />
@@ -158,7 +173,18 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
             Interested in achieving similar metrics for your business?
           </p>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-[#A4C639] transition-all flex items-center justify-center gap-1.5"
+              >
+                <span>View Live</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
             <button
               onClick={onClose}
               className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-semibold text-[#9A9A9A] hover:text-white hover:bg-white/5 border border-white/10 transition-colors"
