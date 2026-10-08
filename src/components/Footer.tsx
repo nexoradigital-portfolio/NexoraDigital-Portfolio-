@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-sm text-[#9A9A9A] max-w-md">
-              Bisma Imran • {PERSONAL_PROFILE.roleTitle}. Engineering modern web platforms and orchestrating high-growth digital marketing strategies.
+              Narmeen Imran • {PERSONAL_PROFILE.roleTitle}. Engineering modern web platforms and orchestrating high-growth digital marketing strategies.
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs text-[#9A9A9A]">
               {PERSONAL_PROFILE.socialLinks.map((s) => (
                 <li key={s.name}>
-                  <a href={s.url} target="_blank" rel="noreferrer" className="hover:text-[#A4C639] transition-colors inline-flex items-center gap-1">
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-[#A4C639] transition-colors inline-flex items-center gap-1">
                     <span>{s.label}</span>
                     <ArrowUpRight className="w-3 h-3 text-[#A4C639]" />
                   </a>

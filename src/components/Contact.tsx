@@ -219,7 +219,7 @@ export const Contact: React.FC = () => {
                 key={social.name}
                 href={social.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white border border-black/10 hover:border-[#607A16] hover:bg-[#A4C639]/10 text-xs font-semibold text-[#111111] transition-all flex items-center gap-1.5"
               >
                 <span>{social.name}</span>

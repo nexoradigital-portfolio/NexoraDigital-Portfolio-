@@ -1,5 +1,5 @@
 /**
- * BISMA IMRAN - Personal Portfolio Website
+ * NARMEEN IMRAN - Personal Portfolio Website
  * Web Developer & Digital Marketer
  * 
  * Strict Black, White & Green Palette

@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
             {/* Small Brand & Personal Name Label */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-3 md:mb-5 shadow-sm border border-black/10">
               <span className="w-2 h-2 rounded-full bg-[#A4C639] animate-pulse" />
-              <span>BISMA IMRAN</span>
+              <span>NARMEEN IMRAN</span>
               <span className="text-[#9A9A9A]">/</span>
               <span className="text-[#A4C639] font-medium tracking-normal">Web Developer & Digital Marketer</span>
             </div>
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
 
             {/* Supporting Text with Personal Introduction */}
             <p className="text-sm sm:text-lg md:text-xl text-[#444444] font-normal leading-relaxed max-w-xl mb-4 md:mb-7">
-              Hi, I'm <strong className="text-[#111111] font-bold">Bisma Imran</strong>. I build fast, modern websites and execute targeted digital marketing campaigns designed to turn visitors into long-term clients.
+              Hi, I'm <strong className="text-[#111111] font-bold">Narmeen Imran</strong>. I build fast, modern websites and execute targeted digital marketing campaigns designed to turn visitors into long-term clients.
             </p>
 
             {/* Action Buttons */}
@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
               <div className="relative z-10 rounded-2xl overflow-hidden bg-white shadow-2xl border border-black/10 ring-1 ring-[#A4C639]/30 transition-all duration-300">
                 <img
                   src={PERSONAL_PROFILE.images.heroPortrait}
-                  alt="Bisma Imran - Web Developer & Digital Marketer"
+                  alt="Narmeen Imran - Web Developer & Digital Marketer"
                   referrerPolicy="no-referrer"
                   className="w-full h-auto object-cover object-center max-h-[280px] sm:max-h-[420px] md:max-h-[520px] transform hover:scale-[1.01] transition-transform duration-700"
                 />

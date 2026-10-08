@@ -61,17 +61,17 @@ export interface FaqItem {
 }
 
 export const PERSONAL_PROFILE = {
-  fullName: "Bisma Imran",
+  fullName: "Narmeen Imran",
   brandName: "NEXORA DIGITAL",
   roleTitle: "Web Developer & Digital Marketer",
   heroHeading: "Building Digital Experiences That Grow Businesses.",
   heroSubHeading: "I Build Websites. I Grow Brands.",
   heroSupportingText:
-    "Hi, I'm Bisma Imran. I specialize in building modern, high-performance websites and crafting digital marketing strategies that help brands grow online.",
+    "Hi, I'm Narmeen Imran. I specialize in building modern, high-performance websites and crafting digital marketing strategies that help brands grow online.",
   
   aboutHeading: "More Than Code. I Build Websites & Digital Growth.",
   aboutDescription:
-    "I'm Bisma Imran, a Web Developer and Digital Marketer. I combine modern engineering, intuitive UI/UX design, and commercial marketing strategies to build digital experiences that look exceptional and achieve real business goals.",
+    "I'm Narmeen Imran, a Web Developer and Digital Marketer. I combine modern engineering, intuitive UI/UX design, and commercial marketing strategies to build digital experiences that look exceptional and achieve real business goals.",
   aboutStory:
     "With a dual focus on engineering robust web applications and creating high-converting acquisition campaigns, I bridge the gap between technical code and measurable commercial traction. Every website I build is engineered for speed, responsiveness, and conversion impact.",
   

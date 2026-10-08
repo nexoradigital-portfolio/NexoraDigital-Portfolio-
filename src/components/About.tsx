@@ -33,7 +33,7 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
         <div className="flex flex-col items-start max-w-3xl mb-6 md:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest text-[#A4C639] uppercase mb-2.5 md:mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>About Bisma Imran</span>
+            <span>About Narmeen Imran</span>
           </div>
 
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-white mb-2.5 md:mb-4 leading-tight">
@@ -58,7 +58,7 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
             <div className="relative h-full min-h-[220px] sm:min-h-[280px] md:min-h-[340px] rounded-2xl overflow-hidden border border-white/10 bg-[#111111] shadow-2xl">
               <img
                 src={PERSONAL_PROFILE.images.aboutWorkspace}
-                alt="Working at workstation - Bisma Imran"
+                alt="Working at workstation - Narmeen Imran"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -68,7 +68,7 @@ export const About: React.FC<AboutProps> = ({ onOpenInquiry }) => {
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-3 sm:p-3.5 rounded-xl bg-[#0B0B0B]/90 backdrop-blur-md border border-[#A4C639]/30">
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#A4C639]">
-                    Bisma Imran
+                    Narmeen Imran
                   </span>
                   <div className="w-2 h-2 rounded-full bg-[#A4C639] animate-pulse" />
                 </div>
