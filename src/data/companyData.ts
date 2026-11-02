@@ -9,7 +9,6 @@
 import heroPortrait from "../assets/images/founder_portrait_1790159530365.jpg";
 import aboutWorkspace from "../assets/images/regenerated_image_1790224806664.jpg";
 import mockupInvestlink from "../assets/images/mockup_investlink_1790656440383.jpg";
-import mockupPromoSavy from "../assets/images/mockup_promosavy_1790660259410.jpg";
 import mockupEcooye from "../assets/images/mockup_ecooye_1790663609888.jpg";
 import mockupNexora from "../assets/images/mockup_nexora_business_1790154001083.jpg";
 import mockupLumina from "../assets/images/mockup_lumina_ecommerce_1790154022228.jpg";
@@ -246,30 +245,8 @@ export const PROJECTS: ProjectItem[] = [
     impact: "Established a professional digital authority for Investlink Advisor, driving a 160% surge in qualified inbound advisory consultations.",
   },
   {
-    id: "promosavy",
-    number: "02",
-    title: "PromoSavy",
-    category: "Web Development / Website Development",
-    description: "A modern promotional website built to present digital offers, services, and promotional content through a clean and engaging web experience.",
-    role: "Web Development & Digital Experience",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Responsive Design", "Promotional UI", "SEO"],
-    image: mockupPromoSavy,
-    client: "PromoSavy",
-    year: "2026",
-    liveUrl: "http://promosavy.com/",
-    featured: true,
-    metrics: [
-      { label: "User Engagement", value: "+145%" },
-      { label: "Load Time", value: "0.6s" },
-      { label: "Offer Click-Through", value: "+38%" },
-    ],
-    challenge: "Presenting dynamic promotional deals, discount campaigns, and digital services in an intuitive, engaging interface that maximizes user engagement without visual clutter.",
-    solution: "Built a lightweight, responsive promotional website with structured offer categories, clear call-to-action touchpoints, and mobile-optimized browsing speed.",
-    impact: "Elevated user interaction rates and brand retention, delivering an engaging promotional experience with sub-second page performance.",
-  },
-  {
     id: "ecooye",
-    number: "03",
+    number: "02",
     title: "Ecooye",
     category: "E-commerce / Mobile & Electronics Website",
     description: "A modern e-commerce website for mobile phones and electronics, designed with a clean shopping experience, product-focused layout, and responsive design.",
@@ -291,7 +268,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "nexora-business",
-    number: "04",
+    number: "03",
     title: "NEXORA Business Website",
     category: "Web Development",
     description: "Flagship corporate website featuring an ultra-modern dark aesthetic, responsive architecture, and dynamic project showcases.",
@@ -311,7 +288,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "lumina-ecommerce",
-    number: "05",
+    number: "04",
     title: "LUMINA E-Commerce",
     category: "Website + UI/UX",
     description: "Minimalist luxury retail experience with seamless product discovery, intuitive checkout flows, and responsive mobile architecture.",
@@ -331,7 +308,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "greenedge-digital",
-    number: "06",
+    number: "05",
     title: "GREENEDGE DIGITAL",
     category: "Digital Marketing",
     description: "Comprehensive multi-channel digital growth engine combining high-intent Google Ads, retargeting funnels, and real-time analytics.",
@@ -351,7 +328,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "finova-fintech",
-    number: "07",
+    number: "06",
     title: "FINOVA",
     category: "Fintech Website",
     description: "Next-generation digital banking web application with interactive investment calculators and enterprise-grade UI security standards.",
@@ -379,7 +356,7 @@ export const STATISTICS = [
     description: "Startups, enterprises, and businesses scaled across modern web and digital channels.",
   },
   {
-    value: "3+",
+    value: "2+",
     label: "Years Experience",
     description: "Specialized in responsive web engineering and full-funnel digital marketing.",
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, Code, TrendingUp, Layout, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Code, TrendingUp, Layout, Layers, CheckCircle2, Award } from "lucide-react";
 import { PERSONAL_PROFILE, HERO_FLOATING_CARDS } from "../data/companyData";
 
 interface HeroProps {
@@ -61,9 +61,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onViewWork }) => {
             </h1>
 
             {/* Supporting Text with Personal Introduction */}
-            <p className="text-sm sm:text-lg md:text-xl text-[#444444] font-normal leading-relaxed max-w-xl mb-4 md:mb-7">
+            <p className="text-sm sm:text-lg md:text-xl text-[#444444] font-normal leading-relaxed max-w-xl mb-3 md:mb-5">
               Hi, I'm <strong className="text-[#111111] font-bold">Narmeen Imran</strong>. I build fast, modern websites and execute targeted digital marketing campaigns designed to turn visitors into long-term clients.
             </p>
+
+            {/* Professional Experience Highlight */}
+            <div className="inline-flex flex-wrap sm:flex-nowrap items-center gap-2.5 sm:gap-3.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-[#050505] text-white border border-[#A4C639]/40 mb-5 md:mb-7 shadow-[0_4px_20px_rgba(0,0,0,0.12),0_0_20px_rgba(164,198,57,0.15)]">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#A4C639] animate-pulse" />
+                <Award className="w-4 h-4 text-[#A4C639] shrink-0" />
+                <strong className="font-display font-extrabold text-xs sm:text-sm tracking-wider text-[#A4C639] uppercase whitespace-nowrap">
+                  2+ YEARS OF EXPERIENCE
+                </strong>
+              </div>
+              <span className="hidden sm:inline text-white/25">|</span>
+              <span className="text-xs sm:text-sm text-[#F5F5F5] font-medium tracking-tight">
+                Web Development &amp; Digital Marketing
+              </span>
+            </div>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 w-full sm:w-auto mb-4 md:mb-8">
